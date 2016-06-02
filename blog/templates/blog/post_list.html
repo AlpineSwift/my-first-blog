@@ -7,16 +7,13 @@
       <h1><a href="">A blog created following Django Girls</a></h1>
     <div>
 
-    <div>
-      <p> published: Today!</p>
-      <h2><a href="">My first post</a></h2>
-      <p>This is the content of my first post. Isn't it grand?</p>
-    </div>
+      {% for post in posts %}
+      <div>
+          <p>published: {{ post.published_date }}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaks }}</p>
+      </div>
+  {% endfor %}
 
-    <div>
-      <p> published: Slightly after the first oney</p>
-      <h2><a href="">My second post</a></h2>
-      <p>This is the content of my second post. It is inferior to the first.</p>
-    </div>
   </body>
 </html>
